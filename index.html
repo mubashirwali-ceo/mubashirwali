@@ -1,0 +1,308 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Mubashir Wali</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Source+Sans+3:wght@400;600&family=Caveat:wght@600&display=swap" rel="stylesheet">
+<style>
+/* Layout: LinkedIn-style profile page. Full-width banner, headshot overlapping its lower edge, then a single reading column with a dated experience timeline. */
+:root {
+  --bg: #f6f8fc;
+  --surface: #ffffff;
+  --fg: #14213d;
+  --muted: #55627f;
+  --line: #d9e0ee;
+  --navy: #0f2f73;
+  --accent: #0f2f73;
+  --accent-ink: #ffffff;
+  --sun: #e08a3c;
+  --chip: #e8eefb;
+  --font-display: "Poppins", "Segoe UI", system-ui, sans-serif;
+  --font-body: "Source Sans 3", "Segoe UI", system-ui, sans-serif;
+  --font-script: "Caveat", "Segoe Script", cursive;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0b1426; --surface: #121e36; --fg: #e8eefc; --muted: #9fb0d3; --line: #243253;
+    --navy: #8fb0ff; --accent: #8fb0ff; --accent-ink: #0b1426; --sun: #f0a964; --chip: #1a2a4d;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0b1426; --surface: #121e36; --fg: #e8eefc; --muted: #9fb0d3; --line: #243253;
+  --navy: #8fb0ff; --accent: #8fb0ff; --accent-ink: #0b1426; --sun: #f0a964; --chip: #1a2a4d;
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+body {
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-body);
+  font-size: 17px;
+  line-height: 1.6;
+}
+h1, h2, h3 { font-family: var(--font-display); line-height: 1.2; margin: 0; text-wrap: balance; }
+p { margin: 0; }
+a { color: var(--accent); }
+a:focus-visible, button:focus-visible { outline: 3px solid var(--sun); outline-offset: 2px; border-radius: 4px; }
+
+.wrap {
+  max-width: 1040px;
+  margin: 0 auto;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+
+/* Banner */
+.banner { display: block; width: 100%; height: auto; max-height: 420px; object-fit: cover; object-position: center; background: var(--chip); }
+
+/* Profile header */
+.profile { display: flex; gap: 24px; align-items: flex-end; flex-wrap: wrap; margin-top: -64px; padding-bottom: 28px; position: relative; }
+.headshot {
+  width: 152px; height: 152px; flex: none;
+  border-radius: 50%; object-fit: cover; object-position: center 20%;
+  border: 5px solid var(--bg);
+  box-shadow: 0 6px 24px rgba(15, 47, 115, 0.22);
+  background: var(--chip);
+}
+.id { flex: 1 1 320px; min-width: 0; padding-top: 72px; }
+.id h1 { font-size: clamp(2rem, 5vw, 3rem); font-weight: 700; color: var(--navy); letter-spacing: -0.01em; }
+.role { font-family: var(--font-display); font-weight: 500; font-size: 1.1rem; margin-top: 6px; }
+.meta { color: var(--muted); margin-top: 6px; font-size: 0.98rem; }
+.status {
+  display: inline-flex; align-items: center; gap: 8px;
+  margin-top: 14px; padding: 6px 14px; border-radius: 999px;
+  background: var(--chip); font-size: 0.92rem; font-weight: 600;
+}
+.status::before { content: ""; width: 9px; height: 9px; border-radius: 50%; background: var(--sun); }
+
+/* Sections */
+section { padding-block: 40px; border-top: 1px solid var(--line); }
+.label {
+  font-family: var(--font-display); font-weight: 600; font-size: 0.78rem;
+  letter-spacing: 0.14em; text-transform: uppercase; color: var(--sun); margin-bottom: 10px;
+}
+h2 { font-size: clamp(1.5rem, 3.2vw, 2rem); font-weight: 600; color: var(--navy); margin-bottom: 20px; }
+
+.about { display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr); gap: 40px; }
+.about p { max-width: 62ch; font-size: 1.08rem; }
+.traits { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; align-content: start; }
+.traits li { padding: 12px 16px; background: var(--surface); border: 1px solid var(--line); border-radius: 10px; font-weight: 600; }
+
+/* Timeline: order and dates are real information here */
+.timeline { list-style: none; margin: 0; padding: 0; display: grid; gap: 28px; position: relative; }
+.timeline::before { content: ""; position: absolute; left: 7px; top: 8px; bottom: 8px; width: 2px; background: var(--line); }
+.job { position: relative; padding-left: 38px; }
+.job::before {
+  content: ""; position: absolute; left: 0; top: 7px; width: 16px; height: 16px; border-radius: 50%;
+  background: var(--bg); border: 3px solid var(--navy);
+}
+.job.now::before { background: var(--sun); border-color: var(--sun); }
+.when { font-family: var(--font-display); font-size: 0.85rem; font-weight: 500; color: var(--muted); font-variant-numeric: tabular-nums; }
+.job h3 { font-size: 1.2rem; font-weight: 600; margin-top: 2px; }
+.org { font-weight: 600; color: var(--navy); }
+.job ul { margin: 10px 0 0; padding-left: 20px; display: grid; gap: 4px; max-width: 64ch; }
+
+/* Skills */
+.skills { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 20px; }
+.skill-group { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 20px; min-width: 0; }
+.skill-group h3 { font-size: 1rem; font-weight: 600; margin-bottom: 12px; }
+.chips { display: flex; flex-wrap: wrap; gap: 8px; list-style: none; margin: 0; padding: 0; }
+.chips li { background: var(--chip); border-radius: 999px; padding: 4px 12px; font-size: 0.95rem; font-weight: 600; }
+
+/* Education */
+.edu { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; }
+.edu div { padding: 16px 0; border-bottom: 1px solid var(--line); min-width: 0; }
+.edu h3 { font-size: 1.05rem; font-weight: 600; }
+.edu p { color: var(--muted); }
+.edu .tag { font-family: var(--font-display); font-size: 0.75rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--sun); }
+.langs { margin-top: 28px; display: flex; gap: 12px; flex-wrap: wrap; align-items: center; }
+.langs strong { font-family: var(--font-display); font-weight: 600; margin-right: 4px; }
+
+/* Contact */
+.contact { background: var(--navy); color: var(--accent-ink); border-top: 0; }
+.contact h2 { color: var(--accent-ink); }
+.contact .label { color: var(--sun); }
+.contact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; }
+.contact-item { border: 1px solid rgba(255,255,255,0.28); border-radius: 12px; padding: 16px 18px; min-width: 0; }
+.contact-item small { display: block; font-family: var(--font-display); font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; opacity: 0.8; }
+.contact-item .val { display: block; margin-top: 4px; font-size: 1.1rem; font-weight: 600; overflow-wrap: anywhere; user-select: all; }
+.contact-item button {
+  margin-top: 10px; font: inherit; font-size: 0.9rem; font-weight: 600; cursor: pointer;
+  background: var(--accent-ink); color: var(--navy); border: 0; border-radius: 8px; padding: 6px 14px;
+}
+.contact a.mail { color: inherit; }
+footer { padding-block: 28px; text-align: center; color: var(--muted); font-size: 0.92rem; }
+.tagline { font-family: var(--font-script); font-size: 1.6rem; color: var(--navy); display: block; margin-bottom: 4px; }
+
+@media (max-width: 720px) {
+  .about { grid-template-columns: minmax(0, 1fr); gap: 24px; }
+  .profile { margin-top: -48px; gap: 12px; }
+  .headshot { width: 124px; height: 124px; }
+  .id { padding-top: 0; flex-basis: 100%; }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .headshot { transition: transform 0.4s ease; }
+  .headshot:hover { transform: scale(1.03); }
+}
+</style>
+
+<img class="banner" src="banner.jpg" alt="Building a Brighter Future. Learn, Grow, Achieve. Same goals, bigger dreams." width="1800" height="675">
+
+<header class="wrap profile">
+  <img class="headshot" src="headshot.jpg" alt="Portrait of Mubashir Wali in a dark blazer and white shirt" width="152" height="152">
+  <div class="id">
+    <h1>Mubashir Wali</h1>
+    <p class="role">Marketing professional &middot; Digital branding &middot; Graphic design</p>
+    <p class="meta">Karachi, Pakistan &middot; BBA student in Supply Chain Management, ILMA University</p>
+    <span class="status">Managing Director at Gonzales Embroidery</span>
+  </div>
+</header>
+
+<main>
+  <section>
+    <div class="wrap about">
+      <div>
+        <p class="label">About</p>
+        <h2>Brand work, client calls and a team to keep on schedule</h2>
+        <p>I have spent more than three years in digital branding, graphic design and team leadership. I coordinate client communication, manage creative teams and run marketing for embroidery and digitizing businesses that serve both local and international customers.</p>
+        <p style="margin-top:14px">Today I run operations and branding at Gonzales Embroidery while I study Supply Chain Management at ILMA University.</p>
+      </div>
+      <ul class="traits" aria-label="Personal attributes">
+        <li>Courteous and professional</li>
+        <li>Strong multitasking and organization</li>
+        <li>Quick learner, self-motivated</li>
+        <li>Committed to high-quality results</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="experience">
+    <div class="wrap">
+      <p class="label">Experience</p>
+      <h2>Where I have worked</h2>
+      <ol class="timeline">
+        <li class="job now">
+          <span class="when">April 2025 &ndash; Present</span>
+          <h3>Managing Director &amp; Team Operator</h3>
+          <p class="org">Gonzales Embroidery</p>
+          <ul>
+            <li>Manage team operations and client branding requirements.</li>
+            <li>Coordinate marketing strategies and workflow processes.</li>
+          </ul>
+        </li>
+        <li class="job">
+          <span class="when">July 2024 &ndash; March 2025</span>
+          <h3>Marketing Coordinator / Team Lead</h3>
+          <p class="org">DD Punch</p>
+          <ul>
+            <li>Led the marketing team and internal branding initiatives.</li>
+            <li>Managed campaign coordination and client communication.</li>
+          </ul>
+        </li>
+        <li class="job">
+          <span class="when">March 2021 &ndash; November 2024</span>
+          <h3>Marketing Coordinator</h3>
+          <p class="org">Magic Digitizing</p>
+          <ul>
+            <li>Oversaw team performance and production scheduling.</li>
+            <li>Handled digital marketing, client communication and computer operations.</li>
+          </ul>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <section id="skills">
+    <div class="wrap">
+      <p class="label">Skills</p>
+      <h2>What I work with</h2>
+      <div class="skills">
+        <div class="skill-group">
+          <h3>Design</h3>
+          <ul class="chips"><li>Adobe Illustrator</li><li>Adobe Photoshop</li></ul>
+        </div>
+        <div class="skill-group">
+          <h3>Marketing</h3>
+          <ul class="chips"><li>Social Media Marketing</li><li>Digital Marketing</li><li>US Market Understanding</li></ul>
+        </div>
+        <div class="skill-group">
+          <h3>Office and systems</h3>
+          <ul class="chips"><li>MS Word</li><li>MS Excel</li><li>Hardware &amp; Software Management</li></ul>
+        </div>
+        <div class="skill-group">
+          <h3>Leadership</h3>
+          <ul class="chips"><li>Team Leadership</li><li>Client Communication</li><li>Production Scheduling</li></ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="education">
+    <div class="wrap">
+      <p class="label">Education</p>
+      <h2>Studies and certificates</h2>
+      <div class="edu">
+        <div><span class="tag">In progress</span><h3>BBA in Supply Chain Management</h3><p>ILMA University</p></div>
+        <div><h3>Intermediate, Computer Science</h3><p>BIEK Karachi</p></div>
+        <div><h3>Matriculation, Science</h3><p>BSEK Karachi</p></div>
+        <div><span class="tag">Certificate</span><h3>Digital Marketing</h3><p>Digitalize Training</p></div>
+        <div><span class="tag">Certificate</span><h3>Graphic Designing</h3><p>Arena Multimedia</p></div>
+      </div>
+      <div class="langs">
+        <strong>Languages</strong>
+        <ul class="chips"><li>Urdu, fluent</li><li>English, intermediate</li></ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <div class="wrap">
+      <p class="label">Contact</p>
+      <h2>Let's talk</h2>
+      <div class="contact-grid">
+        <div class="contact-item">
+          <small>Email</small>
+          <span class="val" id="email">mhrsunny2019@gmail.com</span>
+          <button type="button" data-copy="email" id="copy-email">Copy email</button>
+        </div>
+        <div class="contact-item">
+          <small>Phone</small>
+          <span class="val" id="phone">+92 319 3522620</span>
+          <button type="button" data-copy="phone" id="copy-phone">Copy number</button>
+        </div>
+        <div class="contact-item">
+          <small>Based in</small>
+          <span class="val">Karachi, Pakistan</span>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="wrap">
+  <span class="tagline">Same goals. Bigger dreams.</span>
+  &copy; 2019 Mubashir Wali
+</footer>
+
+<script>
+document.querySelectorAll("button[data-copy]").forEach(function (btn) {
+  var original = btn.textContent;
+  btn.addEventListener("click", function () {
+    var el = document.getElementById(btn.getAttribute("data-copy"));
+    function done() { btn.textContent = "Copied"; setTimeout(function () { btn.textContent = original; }, 1600); }
+    function fallback() {
+      var r = document.createRange(); r.selectNodeContents(el);
+      var s = window.getSelection(); s.removeAllRanges(); s.addRange(r);
+      btn.textContent = "Selected";
+      setTimeout(function () { btn.textContent = original; }, 1600);
+    }
+    try {
+      navigator.clipboard.writeText(el.textContent.trim()).then(done, fallback);
+    } catch (e) { fallback(); }
+  });
+});
+</script>
+
+</body></html>
